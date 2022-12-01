@@ -13,7 +13,7 @@ def load_data(age_option, gender_option, app_option):
     if (gender_option != '전체'):
         df = df[df['2. 귀하의 성별은 무엇인가요?'] == gender_option]
     if (app_option != '전체'):
-        df = df[df['4. 식당을 찾을 때 어떤 앱을 사용하나요? 사용하시는 앱을 모두 골라주세요!'] == app_option]
+        df = df[df['4. 식당을 찾을 때 어떤 앱을 사용하나요? 사용하시는 앱을 모두 골라주세요!'].str.contains(app_option)]
     return df
 def transform_importance(df):
     cols = [
